@@ -1,2 +1,2 @@
 # 2019-behappy-api
-https://thehashy-api.herokuapp.com/
+https://thehashy-api.herokuapp.com/tasks
