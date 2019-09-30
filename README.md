@@ -1,2 +1,2 @@
 # 2019-behappy-api
-API do App BeHappyWith.Me
+https://thehashy-api.herokuapp.com/
