@@ -1,14 +1,16 @@
-const table_name = "tasks";
+const table_name = "users";
 
-exports.up = function(knex, Promise) {
-    return knex.schema.alterTable(table_name, (table) => {
-        table.integer('what').notNullable().default(0);
-        table.integer('who').notNullable().default(0);
-    });
+exports.up = function(knex) {
+  return knex.schema.createTable(table_name, table => {
+    table.increments("oid").primary();
+    table.string("login").notNullable();
+    table.string("email").nullable();
+    table.string("name").nullable();
+    table.string("password").nullable();
+    table.timestamps(false, true);
+  });
 };
 
-exports.down = function(knex, Promise) {
-    return knex.schema.alterTable(table_name, (table) => {
-        table.dropColumn('what').dropColumn('who');
-    });
+exports.down = function(knex) {
+    return knex.schema.dropTable(table_name);
 };
